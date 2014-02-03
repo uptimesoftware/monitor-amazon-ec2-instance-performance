@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uptime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.uptimesoftware.com/erdc/erdc erdc" xmlns="http://www.uptimesoftware.com/erdc/erdc" xmlns:upt="http://www.uptimesoftware.com/erdc/erdc" version="4.0" target_grouping="other">
+	<class>Amazon EC2 Instance Monitor</class>
+	<exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
+	<elements>
+		<element name="process" parameter_type="input" data_type="string" gui_basic="1" range_type="0">
+			<control_options> size:40 </control_options>
+			<default_value>scripts/Amazon_EC2_Instance_Performance_Monitor/Amazon_EC2_Instance_Performance_Monitor.sh</default_value>
+			<short_description>Script Name</short_description>
+			<long_description>Name of the script/binary/process to be executed by up.time</long_description>
+			<validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='AWS_ACCESS_KEY' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>AWS Access Key</short_description>
+			<long_description>AWS Access Key</long_description>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='AWS_SECRET_KEY' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>AWS Secret Key</short_description>
+			<long_description>AWS Secret Key</long_description>
+			<gui_type><password/></gui_type>
+		</element>
+		<element name='CPUUtilization' parameter_type='output' data_type='decimal' gui_basic='' range_type='0' units='Percent'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>CPU Utilization</short_description>
+			<long_description>The percentage of allocated EC2 compute-units.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='DiskReadBytes' parameter_type='output' data_type='decimal' gui_basic='' range_type='0' units='Bytes'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Disk Read Bytes</short_description>
+			<long_description>Bytes read from all ephemeral disks available to the instance.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='DiskReadOps' parameter_type='output' data_type='decimal' gui_basic='' range_type='0' units='Count'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Disk Read Operations</short_description>
+			<long_description>Completed read operations from all ephemeral disks available to the instance.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='DiskWriteBytes' parameter_type='output' data_type='decimal' gui_basic='' range_type='0' units='Bytes'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Disk Write Bytes</short_description>
+			<long_description>Bytes written to all ephemeral disks available to the instance.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='DiskWriteOps' parameter_type='output' data_type='decimal' gui_basic='' range_type='0' units='Count'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Disk Write Operations</short_description>
+			<long_description>Completed write operations to all ephemeral disks available to the instance.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='NetworkIn' parameter_type='output' data_type='decimal' gui_basic='' range_type='0' units='Bytes'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Network In</short_description>
+			<long_description>The number of bytes received on all network interfaces by the instance.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='NetworkOut' parameter_type='output' data_type='decimal' gui_basic='' range_type='0' units='Bytes'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Network Out</short_description>
+			<long_description>The number of bytes sent out on all network interfaces by the instance.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>	
+		<element name="timer" parameter_type="output" data_type="integer" gui_basic="0" range_type="0" units="ms">
+			<control_options>size:8</control_options>
+			<default_value/>
+			<short_description>Response time</short_description>
+			<long_description>Response time in ms</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+	</elements>
+	<help>When running a custom script check, note that the second parameter is always the name of the assigned host. The script that's executed should output each variable on it's own line, otherwise up.time won't be able to capture the appropriate information.</help>
+</uptime>
