@@ -1,5 +1,5 @@
 name=Amazon EC2 Instance Performance Monitor
-version=1.0
+version=1.1
 platforms=linux windows
 description=Given an Amazon AWS access and secret key, this plugin obtains performance metrics for an instance if it is running.
 requiresAgentScript=false
