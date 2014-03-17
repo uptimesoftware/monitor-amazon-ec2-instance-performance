@@ -1,2 +1,0 @@
-@ECHO OFF
-python Amazon_EC2_Instance_Performance_Monitor.py
