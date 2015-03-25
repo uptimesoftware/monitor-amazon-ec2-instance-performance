@@ -1,0 +1,7 @@
+proxy=testproxy  -- The 4 proxy settings all need to be set to get proxy working at this time. Can always look to try none if don't need one. 
+proxy_port=12345
+proxy_user=testuser
+proxy_pass=uptime
+endpoint_name=testendpoint -- Only enter either (endpoint and endpoint_name) or region if you enter both then region will override the endpoint.
+endpoint=https://ec2.us-west-2.amazonaws.com
+region=us-west-2
